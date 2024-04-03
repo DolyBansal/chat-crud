@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>post</title>
+    <link rel="stylesheet" href="/sytle.css">
+</head>
+<body>
+    <h1>Quera posts</h1>
+    <% for (post of posts) { %>
+        <div class="post">
+        <h2 class="user">@<%= post.username %></h2>
+        <h4 class="content"><%= post.content %></h4>
+        <a href="http://localhost:8000/posts/<%= post.id %>">see in detail</a>
+        <a href="http://localhost:8000/posts/<%= post.id %>/edit">Edit</a>
+        <form method="post" action="/posts/<%= post.id %>?_method=DELETE">
+        <button>DELETE</button></form>
+    </div>
+    <%  }%>
+    <a href="http://localhost:8000/posts/new">new post</a>
+        
+    
+</body>
+</html>
